@@ -1,0 +1,62 @@
+$border-radius: 16px;
+$primary: #007324;
+$primary-on: #ffffff;
+$primary-container: #8fff95;
+$primary-container-on: #002a00;
+
+$secondary: #4f664d;
+$secondary-on: #ffffff;
+$secondary-container: #e3efdd;
+$secondary-container-on: #112715;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.index {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+  padding: 2em 1em;
+  &-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    &__container {
+      padding: 1em;
+      border-radius: $border-radius;
+      & h1 {
+        text-transform: uppercase;
+      }
+      h2 {
+        font-style: italic;
+        font-size: 1em;
+      }
+      hr {
+        margin: 1em;
+      }
+    }
+    &__container-primary {
+      background-color: $primary-container;
+      color: $primary;
+      @extend .index-cards__container;
+      hr {
+        border-top: 1px solid $primary;
+      }
+    }
+    &__container-secondary {
+      background-color: $secondary-container;
+      color: $secondary;
+      @extend .index-cards__container;
+      hr {
+        border-top: 1px solid $secondary;
+      }
+    }
+  }
+}
+
+.layout {
+  background-color: $primary-container;
+  padding: 2em 1em;
+}
