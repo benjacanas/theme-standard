@@ -6,7 +6,8 @@ const getDeviseTheme = () => {
       return 'light'
     }
   } else {
-    false
+    // cambiar si cambia el tema por defecto
+    return 'light'
   }
 }
 

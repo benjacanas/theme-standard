@@ -1,25 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-$border-radius: 16px;
-$title: #007bff;
-
-$primary: #4a4949;
-$primary-variant: #4a4949;
-$primary-button: #666666;
-$primary-container: #ffffff;
-
-$secondary: #4a4949;
-$secondary-variant: #00a4eb;
-$secondary-button: #00a4eb;
-$secondary-container: #f2f2f2;
-
 * {
   margin: 0;
   padding: 0;
   font-family: Montserrat;
+  transition: color 200ms, background-color 200ms;
 }
 
-a, button{
+a,
+button {
   cursor: pointer;
 }
 
@@ -28,11 +17,11 @@ a, button{
 
   &-primary {
     @extend .container;
-    background-color: $primary-container;
+    background-color: var(--primary-container);
   }
   &-secondary {
     @extend .container;
-    background-color: $secondary-container;
+    background-color: var(--secondary-container);
   }
 }
 
@@ -49,7 +38,7 @@ a, button{
     line-height: 44px;
     letter-spacing: 0em;
     text-align: left;
-    color: $title;
+    color: var(--title);
   }
   a {
     text-decoration: none;
@@ -63,12 +52,12 @@ a, button{
     border: 1px solid;
   }
   .button-primary {
-    border-color: $primary-button;
-    color: $primary-button;
+    border-color: var(--primary-button);
+    color: var(--primary-button);
   }
   .button-secondary {
-    border: 1px solid $secondary-button;
-    color: $secondary-button;
+    border: 1px solid var(--secondary-button);
+    color: var(--secondary-button);
   }
 }
 
@@ -78,51 +67,6 @@ a, button{
   margin-bottom: 2em;
   gap: 2em;
   flex-wrap: wrap;
-}
-
-.socialCard {
-  flex: 1 1 0px;
-  background: rgba(255, 255, 255, 0.16);
-  display: flex;
-  box-shadow: 0px 0px 6px 0px #00000040;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  gap: 1em;
-  border-radius: 10px;
-  text-align: center;
-  &-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1em;
-  }
-  &-fecha {
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 22px;
-    letter-spacing: 0em;
-  }
-  &-image {
-    border-radius: 50%;
-    aspect-ratio: 1;
-  }
-  h4 {
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 22px;
-    letter-spacing: 0em;
-  }
-  &-area {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 17px;
-    letter-spacing: 0em;
-  }
 }
 
 .searchCard-container {
@@ -135,60 +79,12 @@ a, button{
   }
 }
 
-.searchCard {
-  background: rgba(255, 255, 255, 0.16);
-  display: flex;
-  box-shadow: 0px 0px 6px 0px #00000040;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  gap: 1em;
-  border-radius: 10px;
-  &-title {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    flex-grow: 1;
-    &-date {
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 17px;
-      letter-spacing: 0em;
-      text-align: left;
-    }
-    &-text {
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 27px;
-      letter-spacing: 0em;
-      text-align: left;
-    }
-  }
-  a {
-    text-decoration: none;
-  }
-  button {
-    height: 100%;
-    padding: 0.5em 1em;
-    border-radius: 50px;
-    box-shadow: none;
-    background: none;
-    text-transform: uppercase;
-    border: 1px solid;
-    border: 1px solid $secondary-button;
-    color: $secondary-button;
-  }
-}
-
 .upload-cv {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: $title;
+  color: #1787FF;
   gap: 0.5em;
   cursor: pointer;
   p {

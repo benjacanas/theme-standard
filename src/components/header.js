@@ -1,12 +1,18 @@
 import React from 'react'
-import logoLight from '../images/google-white-logo 1.png'
+import logoDark from '../images/google-white-logo.png'
+import logoLight from '../images/logo-Google.png'
+import { useTheme } from '../context/themeContext'
 const Header = () => {
+  const { theme, toggleTheme } = useTheme()
+
   return (
     <header>
-      <img src={logoLight} alt="logo" />
+      <img src={theme === 'light' ? logoLight : logoDark} alt="logo" />
       <div>
         <button className="link">Link</button>
-        <button className="default">Button</button>
+        <button onClick={toggleTheme} className="default">
+          Button
+        </button>
       </div>
     </header>
   )

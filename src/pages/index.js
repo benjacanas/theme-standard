@@ -1,8 +1,8 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import Title from '../components/title'
-import SocialCard from '../components/socialCard'
-import SearchCard from '../components/searchCard'
+import SocialCard from '../components/socialCard/socialCard'
+import SearchCard from '../components/searchCard/searchCard'
 import '../styles.scss'
 
 // card images

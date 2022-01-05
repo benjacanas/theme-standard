@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './socialCard.scss'
+
 const SocialCard = ({ logo, titulo, imagen, fecha, nombre, area, color }) => {
   return (
     <div className="socialCard">
