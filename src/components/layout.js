@@ -1,16 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const Layout = ({children}) => {
-    return (
-        <main className='layout'>
-            {children}
-        </main>
-    )
+import Header from './header'
+import Footer from './footer'
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <main className="layout">
+        <Header />
+        {children}
+        <Footer />
+      </main>
+    </div>
+  )
 }
 
 Layout.propTypes = {
-    children: PropTypes.object,
-  }
-  
+  children: PropTypes.object
+}
+
 export default Layout
