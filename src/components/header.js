@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <img src={theme === 'light' ? logoLight : logoDark} alt="logo" />
-      <div>
+      <div className="buttons">
         <button className="link">Link</button>
         <button onClick={toggleTheme} className="default">
           Button
