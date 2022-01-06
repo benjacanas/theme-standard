@@ -6,7 +6,8 @@ import getDeviseTheme from '../utils/getDeviseTheme'
 const themes = {
   light: {
     '--title': '#007bff',
-
+    '--footer-container': '#182C49',
+    
     '--primary': '#4a4949',
     '--primary-variant': '#4a4949',
     '--primary-button': '#666666',
@@ -19,6 +20,7 @@ const themes = {
   },
   dark: {
     '--title': '#ffffff',
+    '--footer-container': '#ffffff29',
 
     '--primary': '#FFFFFF',
     '--primary-variant': '#A1A1A1',
@@ -34,16 +36,25 @@ const themes = {
 
 const ThemeContext = createContext(null)
 
+// const { theme, setTheme, toggleTheme } = useTheme()
 export const useTheme = () => useContext(ThemeContext)
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light')
+  // default theme: light
+  const DEFAULT_THEME = 'light'
+  const [theme, setTheme] = useState(DEFAULT_THEME)
 
   useEffect(() => {
+    const localTheme = localStorage.getItem('theme')
     const deviseTheme = getDeviseTheme()
-
-    setTheme(deviseTheme ?? 'light')
+    console.log(localTheme)
+    // local storage > devise theme
+    setTheme(localTheme || deviseTheme || DEFAULT_THEME)
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
