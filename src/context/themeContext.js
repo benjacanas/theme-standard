@@ -1,6 +1,5 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
-import { useContext } from 'react'
 import getDeviseTheme from '../utils/getDeviseTheme'
 
 const themes = {
