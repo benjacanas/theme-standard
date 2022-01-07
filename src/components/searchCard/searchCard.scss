@@ -1,3 +1,5 @@
+@import '../../global-variables';
+
 .searchCard {
   background: rgba(255, 255, 255, 0.16);
   display: flex;
@@ -14,7 +16,7 @@
     justify-content: center;
     flex-grow: 1;
     &-date {
-      color: var(--secondary-variant);
+      color: $secondary-variant;
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
@@ -23,7 +25,7 @@
       text-align: left;
     }
     &-text {
-      color: var(--secondary);
+      color: $secondary;
       font-size: 22px;
       font-style: normal;
       font-weight: 700;
@@ -43,7 +45,7 @@
     background: none;
     text-transform: uppercase;
     border: 1px solid;
-    border: 1px solid var(--secondary-button);
-    color: var(--secondary-button);
+    border: 1px solid $secondary-button;
+    color: $secondary-button;
   }
 }
