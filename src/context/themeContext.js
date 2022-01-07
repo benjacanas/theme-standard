@@ -1,12 +1,13 @@
 import React, { createContext, useEffect, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import getDeviseTheme from '../utils/getDeviseTheme'
+import { Helmet } from 'react-helmet'
 
 const themes = {
   light: {
     '--title': '#007bff',
     '--footer-container': '#182C49',
-    
+
     '--primary': '#4a4949',
     '--primary-variant': '#4a4949',
     '--primary-button': '#666666',
@@ -61,7 +62,19 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
-      <div style={themes[theme]}>{children}</div>
+      <div>{children}</div>
+      <Helmet>
+        <style>
+          {`
+            :root {
+                ${Object.keys(themes[theme]).reduce((acc, variable) => {
+                    return `${acc}
+                    ${variable}: ${themes[theme][variable]};`
+                }, ``)}
+            }
+          `}
+        </style>
+      </Helmet>
     </ThemeContext.Provider>
   )
 }
