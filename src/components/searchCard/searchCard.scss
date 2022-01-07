@@ -1,0 +1,51 @@
+@import '../../global-variables';
+
+.searchCard {
+  background: rgba(255, 255, 255, 0.16);
+  display: flex;
+  box-shadow: 0px 0px 6px 0px #00000040;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2em;
+  gap: 1em;
+  border-radius: 10px;
+  &-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    &-date {
+      color: $secondary-variant;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    &-text {
+      color: $secondary;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  button {
+    height: 100%;
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    box-shadow: none;
+    background: none;
+    text-transform: uppercase;
+    border: 1px solid;
+    border: 1px solid $secondary-button;
+    color: $secondary-button;
+  }
+}

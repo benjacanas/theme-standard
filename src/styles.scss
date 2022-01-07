@@ -1,63 +1,192 @@
-$border-radius: 16px;
-
-$primary: #007324;
-$primary-on: #ffffff;
-$primary-container: #8fff95;
-$primary-container-on: #002a00;
-
-$secondary: #4f664d;
-$secondary-on: #ffffff;
-$secondary-container: #e3efdd;
-$secondary-container-on: #112715;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import 'global-variables';
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Montserrat;
+  transition: color 200ms, background-color 200ms;
 }
 
-.index {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: $border-radius;
-  padding: 2em 1em;
-  &-cards {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-    &__container {
-      padding: 1em;
-      border-radius: $border-radius;
-      & h1 {
-        text-transform: uppercase;
-      }
-      h2 {
-        font-style: italic;
-        font-size: 1em;
-      }
-      hr {
-        margin: 1em;
-      }
-    }
-    &__container-primary {
-      background-color: $primary-container;
-      color: $primary;
-      @extend .index-cards__container;
-      hr {
-        border-top: 1px solid $primary;
-      }
-    }
-    &__container-secondary {
-      background-color: $secondary-container;
-      color: $secondary;
-      @extend .index-cards__container;
-      hr {
-        border-top: 1px solid $secondary;
-      }
-    }
-  }
+a,
+button {
+  cursor: pointer;
 }
 
 .layout {
   background-color: $primary-container;
-  padding: 2em 1em;
+}
+
+header {
+  background-color: #ffffff29;
+  box-shadow: 2px 2px 6px 3px red;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3em;
+  align-items: center;
+  height: 120px;
+  img {
+    width: 240px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 2em;
+    button.link {
+      border: none;
+      background: none;
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: 400;
+      color: $primary;
+    }
+    button.default {
+      padding: 1em 2em;
+      border: none;
+      background: #007bff;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  background-color: $footer-container;
+  padding: 3em max(3em, 10vw);
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  flex-wrap: wrap;
+  .networks {
+    align-self: baseline;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    h3 {
+      margin-bottom: 1em;
+    }
+    li {
+      list-style: none;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.container {
+  padding: 20px 20%;
+
+  &-primary {
+    @extend .container;
+    background-color: $primary-container;
+  }
+  &-secondary {
+    @extend .container;
+    background-color: #ffffff14;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+  h2 {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $title;
+  }
+  a {
+    text-decoration: none;
+  }
+  button {
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    box-shadow: none;
+    background: none;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+  .button-primary {
+    border-color: $primary-button;
+    color: $primary-button;
+  }
+  .button-secondary {
+    border: 1px solid $secondary-button;
+    color: $secondary-button;
+  }
+}
+
+.socialCard-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.searchCard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1em;
+  gap: 1em;
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.upload-cv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #1787ff;
+  gap: 0.5em;
+  cursor: pointer;
+  p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+.text-section {
+  color: $primary;
+  & > * {
+    margin-bottom: 1em;
+  }
+  h2 {
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 59px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  &-subtitle {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 27px;
+  }
+  &-body {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+  }
 }
