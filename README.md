@@ -4,7 +4,7 @@
 
 ## Iniciar el proyecto:
 
-    ```shell
+    ```
     npm install
     npm run develop
     ```
@@ -148,7 +148,7 @@
         Cambiar a modo oscuro
       </button>
       // toggleTheme
-      <input onClick={toggleTheme}  />
+      <input onClick={toggleTheme} type="checkbox" />
     ```
 
 3.  **Utilidades**
